@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/main.css" />
+  <title>Generate-Memes</title>
+</head>
+
+<body onload="init()">
+
+  <header class="main-header">
+    <img src="images/LOGO.png" alt="Memegen logo" class="main-logo" />
+    <ul class="nav-list">
+      <li><a href="#gallery" onclick="gallery()">Gallery</a></li>
+      <li><a href="#about" onclick="about()">About</a></li>
+    </ul>
+  </header>
+
+    <main class="mainLayout">
+    <section class="gallery">
+      <div class="gallery-imgs"></div>
+    </section>
+
+    <section class="editor-container">
+      <div class="meme-generator">
+        <canvas id="meme"></canvas>
+      </div>
+      <div class="box-control">
+
+        <div class="box-control-1">
+          <input type="text" oninput="onSetText(this.value)" placeholder="  add text" class="text-input">
+        </div>
+
+        <div class="box-control-2">
+          <button onclick="onSwitchLine()"><img src="images/options/up-and-down.png" alt=""></button>
+          <button onclick="onAddLine()"><img src="images/options/add.png" alt=""></button>
+          <button onclick="onDeleteLine()"><img src="images/options/trash.png" alt=""></button>
+        </div>
+
+        <div class="box-control-3">
+          <button onclick="onIncrease()"><img src="images/options/increase-font.png" alt=""></button>
+          <button onclick="onDecrease()"><img src="images/options/decrease-font.png" alt=""></button>
+          <button onclick="onAlignmentToLeft()"><img src="images/options/align-to-left.png" alt=""></button>
+          <button onclick="onAlignmentToCenter()"><img src="images/options/center-text-alignment.png" alt=""></button>
+          <button onclick="onAlignmentToRight()"><img src="images/options/align-to-right.png" alt=""></button>
+        </div>
+        
+        <div class="box-control-4">
+          <input type="color" oninput="onSetFillColor(this.value)" class="fill-color-input" value="#ffffff">
+          <input type="color" oninput="onSetStrokeColor(this.value)" class="stroke-color-input" value="#000000">
+          <button onclick="onUpAlignment()"><img src="images/options/Feather-arrows-arrow-down.svg.png" alt=""></button>
+          <button onclick="onDownAlignment()"><img src="images/options/Feather-arrows-arrow-up.svg.png" alt=""></button>
+        </div>
+
+        <div class="box-control-5">
+          <button onclick="onDownloadMeme()">Download</button>
+        </div>
+      </div>
+    </section>
+    
+    <section class="background-img"> <img src="images/options/a.jpg" alt="">
+      <h1 class="heading">MEME GENERATOR</h1>
+      </section>
+      
+  </main>
+
+  <footer>
+<div class="logoDown"> <img src="images/LOGO.png" alt=""></div>
+<h3>David Avni</h3>
+  </footer>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/services/galleryService.js"></script>
+  <script defer src="js/services/memeService.js"></script>
+  <script defer src="js/memeController.js"></script>
+  <script defer src="js/galleryController.js"></script>
+</body>
+
+</html>
